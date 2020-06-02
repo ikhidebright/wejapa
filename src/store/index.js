@@ -77,7 +77,7 @@ export default new Vuex.Store({
       }
     },
     // get getJobs
-    async getJobs ({ commit }) {
+    async getJobs ({ commit, dispatch }) {
       try {
         let response = await Api.getJobs()
         console.log(response)
@@ -99,7 +99,7 @@ export default new Vuex.Store({
        }
       },
     // get getJob
-    async getJob ({ commit }, payload) {
+    async getJob ({ commit, dispatch }, payload) {
       try {
         let response = await Api.getJobDetails(payload.jobID)
         console.log(response)
