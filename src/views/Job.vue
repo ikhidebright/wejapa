@@ -15,13 +15,24 @@
       <br>
       {{ job.title}}
       <br>
+      <br>
+      {{ job.location}}
+      <br>
+      <br>
+      {{ job.status}}
+      <br>
+      <br>
+      {{ job.experience}}
+      <br>
+      <br>
+      {{ job.type }}
+      <br>
+      <br>
       {{ job.description }}
       <br>
-      {{ job.salary }}
       <br>
-      {{ job.salary }}
+      N {{ job.salary }}
       <br>
-      {{ job.resume }}
         </v-col>
     </v-card>
     <br>

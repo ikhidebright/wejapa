@@ -33,7 +33,14 @@ const routes = [
   {
     path: '/job/:id',
     name: 'Job',
-    component: Job
+    component: Job,
+    beforeEnter (to, from, next) {
+      store.dispatch({
+        type: 'getJob',
+        jobID: to.params.id
+      })
+      next()
+    }
   }
 ]
 

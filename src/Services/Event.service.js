@@ -24,7 +24,7 @@ export default {
     getJobs (userID) {
         return Api.get('/job/all')
     },
-    // Add a Todo
+    // getJobDetails
     getJobDetails (jobID) {
         return Api.get(`/job/${jobID}`)
     }

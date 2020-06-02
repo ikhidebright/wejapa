@@ -13,7 +13,8 @@ export default new Vuex.Store({
     successalert: false,
     errormessagealert: null,
     erroralert: false,
-    jobs: null
+    jobs: null,
+    job: null
   },
   mutations: {
     setUser(state, item) {
@@ -26,6 +27,10 @@ export default new Vuex.Store({
     // set jobs
     Jobs (state, item) {
       state.jobs = item
+    },
+    // set job
+    Job (state, item) {
+      state.job = item
     },
     // setErrorAlert
     setErrorAlert (state, item) {
@@ -78,6 +83,27 @@ export default new Vuex.Store({
         console.log(response)
         if (response.status === 200 && response.data.success === true) {
           commit("Jobs", response.data.data.jobs)
+        } else {
+          await dispatch("Error", {
+            errormessagealert: 'Error getting Jobs',
+            erroralert: true
+           })
+        }
+      } catch (e) {
+        commit("Loader", false)
+        await dispatch("Error", {
+          errormessagealert: e,
+          erroralert: true
+        })
+       }
+      },
+    // get getJob
+    async getJob ({ commit }, payload) {
+      try {
+        let response = await Api.getJobDetails(payload.jobID)
+        console.log(response)
+         if (response.status === 200 && response.data.success === true) {
+          commit("Job", response.data.data)
         } else {
           await dispatch("Error", {
             errormessagealert: 'Error getting Jobs',

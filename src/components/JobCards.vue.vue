@@ -6,7 +6,7 @@
     max-width="350"
     :elevation="hover ? 24 : 6"
     shaped
-    to="/"
+    :to="`/job/${job._id}`"
     flat
     light
   >
@@ -20,13 +20,6 @@
     </v-card-subtitle>
   </v-card>
       </template>
-
-
-<!-- git commit -m "first commit"
-git remote add origin https://github.com/ikhidebright/wejapa.git
-git push -u origin master -->
-
-
     </v-hover>
 </template>
 
