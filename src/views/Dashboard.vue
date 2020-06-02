@@ -23,8 +23,8 @@
       <br>
       {{ user[0].resume }}
         </v-col>
-        <v-btn x-large color="#001F90" dark block to="jobs"
-          >View Jobs</v-btn>
+        <v-btn x-large color="#001F90" dark block
+          @click="jobs">View Jobs</v-btn>
     </v-card>
     <br>
   </div>
@@ -37,8 +37,9 @@ import { mapActions, mapState } from 'vuex'
     data: () => ({
     }),
     methods: {
-      ...mapActions(['Login']),
-       getJobs () {
+      ...mapActions(['getJobs']),
+       jobs () {
+           this.getJobs()
       }
     },
     computed: {

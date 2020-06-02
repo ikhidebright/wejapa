@@ -23,12 +23,12 @@ const routes = [
     path: '/jobs',
     name: 'Jobs',
     component: Jobs,
-    beforeEnter (to, from, next) {
-      store.dispatch({
-        type: 'getJobs'
-      })
-      next()
-    }
+    // beforeEnter (to, from, next) {
+    //   store.dispatch({
+    //     type: 'getJobs'
+    //   })
+    //   next()
+    // }
   },
   {
     path: '/job/:id',

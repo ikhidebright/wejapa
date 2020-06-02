@@ -83,6 +83,7 @@ export default new Vuex.Store({
         console.log(response)
         if (response.status === 200 && response.data.success === true) {
           commit("Jobs", response.data.data.jobs)
+          router.push('/jobs')
         } else {
           await dispatch("Error", {
             errormessagealert: 'Error getting Jobs',
